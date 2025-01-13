@@ -1,7 +1,12 @@
 import { useRef, useEffect } from "react";
 import RegularButton from "./RegularButton";
 
-export default function ErrorCard({ handleClick }) {
+export default function ErrorCard({
+  handleClick,
+  errorText,
+  errorDetails,
+  restartGameText,
+}) {
   const divRef = useRef(null);
 
   useEffect(() => {
@@ -9,12 +14,9 @@ export default function ErrorCard({ handleClick }) {
   }, []);
   return (
     <div className="wrapper wrapper--accent" ref={divRef} tabIndex={-1}>
-      <p className="p--large">Sorry, there was an error.</p>
-      <p className="p--regular">
-        Please come back later or click the button below to try restarting the
-        game.
-      </p>
-      <RegularButton handleClick={handleClick}>Restart game</RegularButton>
+      <p className="p--large">{errorText}</p>
+      <p className="p--regular">{errorDetails}</p>
+      <RegularButton handleClick={handleClick}>{restartGameText}</RegularButton>
     </div>
   );
 }

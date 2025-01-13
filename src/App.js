@@ -4,6 +4,7 @@ import MemoryCard from "./components/MemoryCard";
 import AssistiveTechInfo from "./components/AssistiveTechInfo";
 import GameOver from "./components/GameOver";
 import ErrorCard from "./components/ErrorCard";
+import localization from "./localization";
 
 export default function App() {
   const initialFormData = { category: "animals-and-nature", number: 10 };
@@ -16,6 +17,8 @@ export default function App() {
   const [matchedCards, setMatchedCards] = useState([]);
   const [areAllCardsMatched, setAreAllCardsMatched] = useState(false);
   const [isError, setIsError] = useState(false);
+  const [language, setLanguage] = useState("en");
+  const strings = localization[language];
 
   useEffect(() => {
     if (selectedCards.length === 2) {
@@ -134,18 +137,30 @@ export default function App() {
 
   return (
     <main>
-      <h1>Memory</h1>
+      <h1>{strings.title}</h1>
+      <button onClick={() => setLanguage(language === "en" ? "ja" : "en")}>
+        {language === "en" ? "日本語" : "English"}
+      </button>
       {!isGameOn && !isError && (
         <Form
           handleSubmit={startGame}
           handleChange={handleFormChange}
           isFirstRender={isFirstRender}
+          instructions={strings.instructions}
+          startGameText={strings.startGame}
+          categories={strings.categories}
+          numbers={strings.numbers}
+          categoryLabel={strings.categoryLabel}
+          numberLabel={strings.numberLabel}
+          language={language}
         />
       )}
       {isGameOn && !areAllCardsMatched && (
         <AssistiveTechInfo
           emojisData={emojisData}
           matchedCards={matchedCards}
+          matchedPairsText={strings.matchedPairs}
+          cardsLeftText={strings.cardsLeft}
         />
       )}
       {isGameOn && (
@@ -156,8 +171,21 @@ export default function App() {
           matchedCards={matchedCards}
         />
       )}
-      {areAllCardsMatched && <GameOver handleClick={resetGame} />}
-      {isError && <ErrorCard handleClick={resetError} />}
+      {areAllCardsMatched && (
+        <GameOver
+          handleClick={resetGame}
+          playAgainText={strings.playAgain}
+          gameOverText={strings.gameOverText}
+        />
+      )}
+      {isError && (
+        <ErrorCard
+          handleClick={resetError}
+          errorText={strings.error}
+          errorDetails={strings.errorDetails}
+          restartGameText={strings.restartGame}
+        />
+      )}
     </main>
   );
 }

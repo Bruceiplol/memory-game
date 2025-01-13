@@ -1,7 +1,7 @@
 import { useRef, useEffect } from "react";
 import RegularButton from "./RegularButton";
 
-export default function GameOver({ handleClick }) {
+export default function GameOver({ handleClick, playAgainText, gameOverText }) {
   const divRef = useRef(null);
 
   useEffect(() => {
@@ -10,8 +10,8 @@ export default function GameOver({ handleClick }) {
 
   return (
     <div className="wrapper wrapper--accent" ref={divRef} tabIndex={-1}>
-      <p className="p--large">You've matched all the memory cards!</p>
-      <RegularButton handleClick={handleClick}>Play again</RegularButton>
+      <p className="p--large">{gameOverText}</p>
+      <RegularButton handleClick={handleClick}>{playAgainText}</RegularButton>
     </div>
   );
 }
