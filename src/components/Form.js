@@ -7,7 +7,7 @@ export default function Form({ handleSubmit, handleChange, isFirstRender }) {
     
     useEffect(() => {
         !isFirstRender && divRef.current.focus()
-    }, [])
+    }, [isFirstRender])
     
     return (
         <div className="form-container" ref={divRef} tabIndex={-1}>

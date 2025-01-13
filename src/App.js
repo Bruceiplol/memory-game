@@ -36,7 +36,7 @@ export default function App() {
     if (emojisData.length && matchedCards.length === emojisData.length) {
       setAreAllCardsMatched(true);
     }
-  }, [matchedCards]);
+  }, [matchedCards, emojisData.length]);
 
   function getRandomIndices(data) {
     const randomIndicesArray = [];
