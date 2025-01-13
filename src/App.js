@@ -135,12 +135,25 @@ export default function App() {
     setIsError(false);
   }
 
+  const handleLanguageChange = (event) => {
+    setLanguage(event.target.value);
+  };
+
   return (
     <main>
       <h1>{strings.title}</h1>
-      <button onClick={() => setLanguage(language === "en" ? "ja" : "en")}>
-        {language === "en" ? "日本語" : "English"}
-      </button>
+      <div className="language-selector">
+        <label htmlFor="language">Language: </label>
+        <select
+          id="language"
+          value={language}
+          onChange={handleLanguageChange}
+          style={{ marginBottom: "20px", border:"1px solid white" }}
+        >
+          <option value="en">English</option>
+          <option value="ja">日本語</option>
+        </select>
+      </div>
       {!isGameOn && !isError && (
         <Form
           handleSubmit={startGame}
