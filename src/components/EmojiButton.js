@@ -1,7 +1,6 @@
 import { decodeEntity } from "html-entities";
 
 export default function EmojiButton({
-  content,
   emoji,
   handleClick,
   selectedCardEntry,

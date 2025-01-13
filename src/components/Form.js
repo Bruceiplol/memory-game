@@ -6,8 +6,7 @@ export default function Form({
   handleSubmit,
   handleChange,
   isFirstRender,
-  instructions,
-  startGameText,
+  strings,
   language
 }) {
   const divRef = useRef(null);
@@ -18,11 +17,11 @@ export default function Form({
 
   return (
     <div className="form-container" ref={divRef} tabIndex={-1}>
-      <p className="p--regular">{instructions}</p>
+      <p className="p--regular">{strings.instructions}</p>
       <form className="wrapper">
         <Select handleChange={handleChange} language={language}/>
         <RegularButton handleClick={handleSubmit}>
-          {startGameText}
+          {strings.startGame}
         </RegularButton>
       </form>
     </div>

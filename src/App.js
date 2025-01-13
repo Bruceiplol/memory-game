@@ -159,12 +159,7 @@ export default function App() {
           handleSubmit={startGame}
           handleChange={handleFormChange}
           isFirstRender={isFirstRender}
-          instructions={strings.instructions}
-          startGameText={strings.startGame}
-          categories={strings.categories}
-          numbers={strings.numbers}
-          categoryLabel={strings.categoryLabel}
-          numberLabel={strings.numberLabel}
+          strings={strings}
           language={language}
         />
       )}
@@ -172,8 +167,7 @@ export default function App() {
         <AssistiveTechInfo
           emojisData={emojisData}
           matchedCards={matchedCards}
-          matchedPairsText={strings.matchedPairs}
-          cardsLeftText={strings.cardsLeft}
+          strings={strings}
         />
       )}
       {isGameOn && (
@@ -187,16 +181,13 @@ export default function App() {
       {areAllCardsMatched && (
         <GameOver
           handleClick={resetGame}
-          playAgainText={strings.playAgain}
-          gameOverText={strings.gameOverText}
+          strings={strings}
         />
       )}
       {isError && (
         <ErrorCard
           handleClick={resetError}
-          errorText={strings.error}
-          errorDetails={strings.errorDetails}
-          restartGameText={strings.restartGame}
+          strings={strings}
         />
       )}
     </main>

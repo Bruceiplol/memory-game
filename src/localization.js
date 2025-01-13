@@ -1,59 +1,31 @@
 const localization = {
   en: {
     title: "Memory",
-    instructions: "Customize the game by selecting an emoji category and a number of memory cards.",
+    instructions:
+      "Customize the game by selecting an emoji category and a number of memory cards.",
     startGame: "Start Game",
     matchedPairs: "Number of matched pairs:",
     cardsLeft: "Number of cards left to match:",
     error: "Sorry, there was an error.",
-    errorDetails: "Please come back later or click the button below to try restarting the game.",
+    errorDetails:
+      "Please come back later or click the button below to try restarting the game.",
     restartGame: "Restart game",
     playAgain: "Play again",
     gameOverText: "You've matched all the memory cards!",
-    categoryLabel: "Category",
-    numberLabel: "Number of Cards",
-    categories: [
-      { name: "Animals and Nature", value: "animals-and-nature" },
-      { name: "Food and Drink", value: "food-and-drink" },
-      { name: "Travel and Places", value: "travel-and-places" },
-      { name: "Objects", value: "objects" },
-      { name: "Symbols", value: "symbols" },
-    ],
-    numbers: [
-      { name: "10 Cards", value: "10" },
-      { name: "20 Cards", value: "20" },
-      { name: "30 Cards", value: "30" },
-      { name: "40 Cards", value: "40" },
-      { name: "50 Cards", value: "50" },
-    ],
   },
   ja: {
     title: "記憶ゲーム",
-    instructions: "絵文字カテゴリーとカード枚数を選択してゲームをカスタマイズしてください。",
+    instructions:
+      "絵文字カテゴリーとカード枚数を選択してゲームをカスタマイズしてください。",
     startGame: "ゲームを開始",
     matchedPairs: "一致したペアの数：",
     cardsLeft: "一致させる必要があるカードの数：",
     error: "申し訳ありませんが、エラーが発生しました。",
-    errorDetails: "後でもう一度お試しいただくか、以下のボタンをクリックしてゲームを再起動してください。",
+    errorDetails:
+      "後でもう一度お試しいただくか、以下のボタンをクリックしてゲームを再起動してください。",
     restartGame: "ゲームを再起動",
     playAgain: "もう一度プレイ",
     gameOverText: "すべてのカードを一致させました！",
-    categoryLabel: "カテゴリー",
-    numberLabel: "カード枚数",
-    categories: [
-      { name: "動物と自然", value: "animals-and-nature" },
-      { name: "食べ物と飲み物", value: "food-and-drink" },
-      { name: "旅行と場所", value: "travel-and-places" },
-      { name: "物体", value: "objects" },
-      { name: "シンボル", value: "symbols" },
-    ],
-    numbers: [
-      { name: "10 枚", value: "10" },
-      { name: "20 枚", value: "20" },
-      { name: "30 枚", value: "30" },
-      { name: "40 枚", value: "40" },
-      { name: "50 枚", value: "50" },
-    ],
   },
 };
 

@@ -3,9 +3,7 @@ import RegularButton from "./RegularButton";
 
 export default function ErrorCard({
   handleClick,
-  errorText,
-  errorDetails,
-  restartGameText,
+  strings
 }) {
   const divRef = useRef(null);
 
@@ -14,9 +12,9 @@ export default function ErrorCard({
   }, []);
   return (
     <div className="wrapper wrapper--accent" ref={divRef} tabIndex={-1}>
-      <p className="p--large">{errorText}</p>
-      <p className="p--regular">{errorDetails}</p>
-      <RegularButton handleClick={handleClick}>{restartGameText}</RegularButton>
+      <p className="p--large">{strings.error}</p>
+      <p className="p--regular">{strings.errorDetails}</p>
+      <RegularButton handleClick={handleClick}>{strings.restartGame}</RegularButton>
     </div>
   );
 }
